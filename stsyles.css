@@ -1,10 +1,9 @@
 body{
-    background-color: red;
+    background: white;
 }
 
 div{
-    background-attachment:white;
-
+    background: white;
 }
 
 div a{
@@ -12,3 +11,4 @@ div a{
     padding: 10px;
     font-size: 24px;
 }
+

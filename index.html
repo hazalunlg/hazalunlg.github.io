@@ -1,13 +1,43 @@
 <html>
     <head>
         <title>Ankara Bilim Üniversitesi</title>
-        </head>
-        <body>
-            <div>
-                <a href="index.html">Ana Sayfa</a>
-                <a href="hakkımızda.html">hakkımızda</a>
-                <a href="iletişim.html">İletişim</a>
-            </div>
-            <h1>Ankara Bilim Üniversitesi</h1>
-           </body>
-</html>        
+        <link rel="stylesheet" href="stsyles.css">
+    <style>
+        #slider img {
+                display: none;
+            }
+            #slider img.active {
+                display: block;
+            }
+        </style>
+        <script>
+            const numOfSlides=4;
+            let activeSlide=0;
+
+            setInterval(function() {
+                document.querySelectorAll("slider img")[activeSlide].classList.remove('active');
+                document.querySelectorAll("#slider img")[activeSlide+ 1].classList.add('active');
+                activeSlide=(activeSlide + 1)% numOfSlides;
+            }, 2000);
+            </script>
+    </head>
+    <body>
+        <div>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="hakkımızda.html">Hakkımızda</a>
+            <a href="görsel.html">Görseller</a>
+            <a href="iletişim.html">İletişim</a>
+        </div>
+        <h1>Ankara Bilim Üniversitesi</h1>
+
+
+        <div id="slider">
+            <img src="https://ankarabilim.edu.tr/assets/images/anasayfa-banner/hazirlik-okulu.jpg?v=2" class="active" alt="">
+            <img src="https://ankarabilim.edu.tr/assets/images/anasayfa-banner/meslekyuksekokulu.jpg?v=2" alt="">
+            <img src="https://ankarabilim.edu.tr/assets/images/anasayfa-banner/fakulteler.jpg?v=2" alt="">
+            <img src="https://ankarabilim.edu.tr/assets/images/anasayfa-banner/lisansustu.jpg?v=2" alt="">
+        </div>
+        <p>17 Nisan 2020 tarih ve 31102 sayılı Resmi Gazete’ de yayımlanarak fiili kuruluşunu tamamlayan Ankara Bilim Üniversitesi, 21 Nisan 2016 tarihinde kurulan; amacı “ sürdürülebilir kalkınmayı” bireysel ve kurumsal düzeyde yaygınlaştıracak bilinç ve kültürü geliştirmek; bu mânâda, ülkemiz ve dünyadaki gelişmeleri yakından takip ederek; çevre, ekonomik hedefler ve insan niteliği itibariyle yüksek verimlilik standart ve uygulamaları belirlemekle mükellef bir sivil toplum örgütü olan Türkiye Verimlilik Vakfı tarafından; bu temel strateji ve hedefler doğrultusunda kurulmuş bir vakıf üniversitedir.>
+         <img src="https://ankarabilim.edu.tr/departman/Uploads/menu_view/maltepe-kampus.jpg">  
+        </body>
+</html> 

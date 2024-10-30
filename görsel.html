@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Görseller</title>
+        <link rel="stylesheet" href="stsyles.css">
+        <style>
+            #gallery {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            #gallery-img {
+                width: 45%;
+            }
+
+            #gallery-popup {
+                display: none;
+                align-items: center;
+                justify-content: center;
+                position: fixed;
+                top: 5%;
+                left: 5%;
+                width: 90%;
+                height: 90%;
+                background: #000;
+            }
+            #gallery-popup img {
+                width: 100%;
+            }
+            #gallery-popup-close {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            #gallery-popup-close:hover {
+                background: red;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1>Görseller</h1>
+    </body>
+    <div >
+        <a href="index.html">Ana Sayfa</a>
+            <a href="hakkımızda.html">Hakkımızda</a>
+            <a href="görsel.html">Görseller</a>
+            <a href="iletişim.html">İletişim</a>
+    </div>
+    <h1>Ankara Bilim Üniversitesi Sayfası</h1>
+
+    <div id="gallery">
+        <img src="https://ankarabilim.edu.tr/assets/images/anasayfa-banner/hazirlik-okulu.jpg?v=2" class="active" alt="">
+            <img src="https://ankarabilim.edu.tr/assets/images/anasayfa-banner/meslekyuksekokulu.jpg?v=2" alt="">
+            <img src="https://ankarabilim.edu.tr/assets/images/anasayfa-banner/fakulteler.jpg?v=2" alt="">
+            <img src="https://ankarabilim.edu.tr/assets/images/anasayfa-banner/lisansustu.jpg?v=2" alt="">
+    </div>
+    <div id="gallery-popup">
+        <img src="https://ankarabilim.edu.tr/assets/images/anasayfa-banner/fakulteler.jpg?v=2" aşt="">
+
+        <button id="gallery-popup-close">X</button> 
+    </div>
+    <script>
+        const images= document.querySelectorAll("#gallery img");
+
+        images.forEach(img => {
+            img.addEventListener('click', (e)=> {
+                document.getElementById("#gallery-popup").style.display="flex";
+                document.querySelector("gallery-popup img").setAttribute("src", e.target.src);
+            });
+        });
+
+
+        document.getElementById("gallery-popup-close").addEventListener('click', ()=> {
+            document.getElementById("gallery-popup").style.display="none";
+        })
+    </script>
+</html>
